@@ -1,0 +1,42 @@
+export EDITOR=vim
+
+# Load OS specific settings
+source ${HOME}/.bash.d/platform/{{- .chezmoi.os }}
+
+# Load functions
+for ff in ~/.bash.d/functions/*.sh
+do
+  . $ff
+done
+
+# Load host custom settings
+if [[ -f "$HOME/.bash.d/local.bash" ]]; then
+  source "$HOME/.bash.d/local.bash"
+fi
+
+# will we go?
+if [ -d ${HOME}/.local/go/bin ]; then
+  PATH=$PATH:${HOME}/.local/go/bin
+  export GOPATH=${HOME}/go
+  export GOBIN=${HOME}/.local/bin
+fi
+
+if [ -d ${HOME}/.cargo/bin ]; then
+  PATH=$PATH:${HOME}/.local/bin:${HOME}/.cargo/bin
+fi
+# Load aliases
+for af in ~/.bash.d/aliases/*.als
+do
+  . $af
+done
+
+# apply local bashcomp files
+if [ -d ${HOME}/.local/bash/completions ]; then
+  for file in ${HOME}/.local/bash/completions/*
+  do
+    . $file
+  done
+fi
+
+# setup prompt
+. ${HOME}/.bash.d/prompt
