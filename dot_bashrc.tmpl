@@ -14,6 +14,8 @@ if [[ -f "$HOME/.bash.d/local.bash" ]]; then
   source "$HOME/.bash.d/local.bash"
 fi
 
+PATH=${PATH}:${HOME}/.local/bin
+
 # will we go?
 if [ -d ${HOME}/.local/go/bin ]; then
   PATH=$PATH:${HOME}/.local/go/bin
@@ -37,6 +39,8 @@ if [ -d ${HOME}/.local/bash/completions ]; then
     . $file
   done
 fi
+
+export PATH
 
 # setup prompt
 . ${HOME}/.bash.d/prompt
