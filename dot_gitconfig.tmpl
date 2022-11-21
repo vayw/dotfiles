@@ -5,3 +5,12 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+
+{{ if hasKey . "git" -}}
+{{ if hasKey .git "Instead" -}}
+  {{ range .git.Instead -}}
+[url "{{ .Use }}"]
+    insteadOf = {{ .Of }}
+  {{ end -}}
+{{ end -}}
+{{ end -}}

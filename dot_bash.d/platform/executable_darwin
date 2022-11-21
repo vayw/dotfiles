@@ -2,7 +2,7 @@ export CLICOLOR=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 if [ -d /opt/homebrew/bin ]; then
-  PATH=/opt/homebrew/bin:$PATH
+	PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:/opt/homebrew/bin:$PATH"
 fi
 
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
