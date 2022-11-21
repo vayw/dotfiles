@@ -1,4 +1,7 @@
-# Create `~/.config/chezmoi/chezmoi.toml before init`
+# Create config  before init
+
+`~/.config/chezmoi/chezmoi.toml`
+
 ```
 [data]
   email = <my email address>
