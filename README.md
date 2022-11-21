@@ -1,3 +1,7 @@
+## dotfiles managed by chezmoi
+
+`https://www.chezmoi.io`
+
 # Create config  before init
 
 `~/.config/chezmoi/chezmoi.toml`
