@@ -40,6 +40,11 @@ if [ -d ${HOME}/.local/bash/completions ]; then
   done
 fi
 
+# check krew
+if [ -d ${HOME}/.krew/bin ]; then
+  PATH=$PATH:${HOME}/.krew/bin
+fi
+
 export PATH
 
 # setup prompt
