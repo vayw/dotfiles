@@ -5,5 +5,9 @@ if [ -d /opt/homebrew/bin ]; then
 	PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:/opt/homebrew/bin:$PATH"
 fi
 
+if [ -d /opt/homebrew/opt/findutils/libexec/gnubin ]; then
+  PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+fi
+
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
