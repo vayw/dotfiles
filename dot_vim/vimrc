@@ -80,6 +80,11 @@ let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 " Open go doc in vertical window, horizontal, or tab
 au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
 
+" allow additional .vimrc
+set exrc
+" allow only my .vimrc
+set secure
+
 if filereadable("$HOME/.vim/local.vim")
     source $HOME/.vim/local.vim
 endif
