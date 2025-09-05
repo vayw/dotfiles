@@ -11,12 +11,12 @@ do
   . $ff
 done
 
+PATH=${PATH}:${HOME}/.local/bin
+
 # Load host custom settings
 if [[ -f "$HOME/.bash.d/local.bash" ]]; then
   source "$HOME/.bash.d/local.bash"
 fi
-
-PATH=${PATH}:${HOME}/.local/bin
 
 # will we go?
 if [ -d ${HOME}/golang/bin ]; then
